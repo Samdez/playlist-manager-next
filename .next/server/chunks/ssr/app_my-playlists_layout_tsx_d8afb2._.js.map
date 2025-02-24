@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/dezalduasamuel/Desktop/Code/playlist-manager-product/playlist-manager-next/app/my-playlists/layout.tsx"],"sourcesContent":["export default function PlaylistsLayout({\n\tchildren,\n}: {\n\tchildren: React.ReactNode;\n}) {\n\treturn (\n\t\t<main className=\"min-h-screen bg-neutral-950 bg-gradient-to-b from-emerald-950/50 to-neutral-950\">\n\t\t\t<div className=\"container mx-auto py-8 px-2\">{children}</div>\n\t\t</main>\n\t);\n}\n"],"names":[],"mappings":";;;;;AAAe,SAAS,gBAAgB,EACvC,QAAQ,EAGR;IACA,qBACC,6WAAC;QAAK,WAAU;kBACf,cAAA,6WAAC;YAAI,WAAU;sBAA+B;;;;;;;;;;;AAGjD"}},
+    {"offset": {"line": 29, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

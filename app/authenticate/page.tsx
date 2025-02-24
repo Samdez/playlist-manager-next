@@ -7,8 +7,6 @@ export default function MyPlaylists() {
 	useEffect(() => {
 		const authenticate = async () => {
 			await client.authenticate();
-			const user = await client.currentUser.profile();
-			console.log('🚀 ~ authenticate ~ user:', user);
 		};
 		authenticate();
 		redirect('/my-playlists');
