@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/dezalduasamuel/Desktop/Code/playlist-manager-product/playlist-manager-next/app/my-playlists/page.tsx"],"sourcesContent":["'use client';\nimport { useParams } from 'next/navigation';\n// import { initClient } from './client';\n\nexport default async function MyPlaylists() {\n\tconst params = useParams();\n\tconsole.log('🚀 ~ MyPlaylists ~ params:', params);\n}\n"],"names":[],"mappings":";;;AACA;;AADA;;AAIe,eAAe;;IAC7B,MAAM,SAAS,CAAA,GAAA,oQAAA,CAAA,YAAS,AAAD;IACvB,QAAQ,GAAG,CAAC,8BAA8B;AAC3C;GAH8B;;QACd,oQAAA,CAAA,YAAS;;;KADK"}},
+    {"offset": {"line": 30, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":["file:///Users/dezalduasamuel/Desktop/Code/playlist-manager-product/playlist-manager-next/node_modules/.pnpm/next%4015.1.7_react-dom%4019.0.0_react%4019.0.0__react%4019.0.0/node_modules/next/navigation.js"],"sourcesContent":["module.exports = require('./dist/client/components/navigation')\n"],"names":[],"mappings":"AAAA,OAAO,OAAO","ignoreList":[0]}},
+    {"offset": {"line": 41, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

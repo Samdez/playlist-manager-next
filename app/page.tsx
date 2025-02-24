@@ -16,6 +16,7 @@ import {
 	AccordionTrigger,
 	AccordionContent,
 } from '@/components/ui/accordion';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
 	title: 'Smart Playlist Shuffle - Advanced Spotify Playlist Randomization',
@@ -46,13 +47,15 @@ export default function Page() {
 						</p>
 
 						<div className="flex flex-col sm:flex-row gap-4 lg:w-full w-48 justify-center">
-							<Button
-								size="lg"
-								className="bg-[#1DB954] hover:bg-[#1DB954]/90 text-white font-semibold px-8 py-6 rounded-full text-lg"
-							>
-								Try For Free
-								<ArrowRight className="ml-2 h-5 w-5" />
-							</Button>
+							<Link href="/authenticate">
+								<Button
+									size="lg"
+									className="bg-[#1DB954] hover:bg-[#1DB954]/90 text-white font-semibold px-8 py-6 rounded-full text-lg"
+								>
+									Try For Free
+									<ArrowRight className="ml-2 h-5 w-5" />
+								</Button>
+							</Link>
 						</div>
 					</div>
 

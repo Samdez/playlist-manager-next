@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 135, "column": 0}, "map": {"version":3,"sources":["file:///Users/dezalduasamuel/Desktop/Code/playlist-manager-product/playlist-manager-next/app/user-playlists/page.tsx"],"sourcesContent":["import SpotifyWebApi from 'spotify-web-api-node';\n\nexport default async function UserPlaylists() {\n\tconst spotifyApi = new SpotifyWebApi({\n\t\tclientId: '0916ebedc8fe494699b4252738eb2444',\n\t\tclientSecret: 'bf470b8b094245afb8799dcfa33f2645',\n\t});\n\tconst token = spotifyApi.getAccessToken();\n\tconst me = await spotifyApi.getMe();\n\tconsole.log('🚀 ~ UserPlaylists ~ me:', me);\n\tconsole.log('🚀 ~ UserPlaylists ~ token:', token);\n\n\treturn <div>User Playlists</div>;\n\t// const playlists = await spotifyApi.getUserPlaylists();\n\t// return <div>User Playlists: {playlists.body.items.map(el => el.name)}</div>;\n}\n"],"names":[],"mappings":";;;;AAAA;;;AAEe,eAAe;IAC7B,MAAM,aAAa,IAAI,wOAAA,CAAA,UAAa,CAAC;QACpC,UAAU;QACV,cAAc;IACf;IACA,MAAM,QAAQ,WAAW,cAAc;IACvC,MAAM,KAAK,MAAM,WAAW,KAAK;IACjC,QAAQ,GAAG,CAAC,4BAA4B;IACxC,QAAQ,GAAG,CAAC,+BAA+B;IAE3C,qBAAO,6WAAC;kBAAI;;;;;;AACZ,yDAAyD;AACzD,+EAA+E;AAChF"}},
+    {"offset": {"line": 161, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 172, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
+    {"offset": {"line": 172, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
