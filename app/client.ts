@@ -23,6 +23,6 @@ const scopes = [
 ];
 export const client = SpotifyApi.withUserAuthorization(
 	process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID!,
-	process.env.REDIRECT_URI!,
+	process.env.NEXT_PUBLIC_REDIRECT_URI!,
 	scopes
 );
