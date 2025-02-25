@@ -7,6 +7,8 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useParams } from 'next/navigation';
 import { shuffleTracks } from '@/app/utils';
 import { Button } from '@/components/ui/button';
+import * as motion from 'motion/react-client';
+import { spring } from 'motion/react';
 
 export default function PlaylistDetail() {
 	const params = useParams<{ id: string }>();
@@ -29,7 +31,11 @@ export default function PlaylistDetail() {
 
 	function shufflePlaylist() {
 		if (playlist) {
-			setPlaylist(shuffleTracks(playlist));
+			const timeout = setTimeout(
+				() => setPlaylist(shuffleTracks(playlist)),
+				100
+			);
+			return () => clearTimeout(timeout);
 		}
 	}
 	async function syncPlaylist() {
@@ -91,13 +97,15 @@ export default function PlaylistDetail() {
 					<div className="w-14 sm:w-20 text-right">DURATION</div>
 				</div>
 
-				<div className="divide-y divide-white/5">
+				<ul className="divide-y divide-white/5">
 					{playlist.tracks.items.map((item, index) => {
 						const track = item.track as Track;
 						return (
-							<div
+							<motion.li
 								key={track.id}
 								className="grid grid-cols-[auto_auto_1fr_auto] items-center gap-2 sm:gap-4 p-2 hover:bg-white/5 transition-colors group"
+								layout
+								transition={spring}
 							>
 								<div className="w-8 sm:w-10 text-white">{index + 1}</div>
 								<Image
@@ -118,10 +126,10 @@ export default function PlaylistDetail() {
 								<div className="text-neutral-400 text-sm w-14 sm:w-20 text-right">
 									{formatDuration(track.duration_ms)}
 								</div>
-							</div>
+							</motion.li>
 						);
 					})}
-				</div>
+				</ul>
 			</div>
 		</div>
 	);
