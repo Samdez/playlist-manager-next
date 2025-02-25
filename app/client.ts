@@ -23,6 +23,6 @@ const scopes = [
 ];
 export const client = SpotifyApi.withUserAuthorization(
 	process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID!,
-	'http://localhost:3000/my-playlists',
+	process.env.REDIRECT_URI!,
 	scopes
 );
