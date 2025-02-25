@@ -62,8 +62,6 @@ function MyPlaylists() {
             const authenticate = {
                 "MyPlaylists.useEffect.authenticate": async ()=>{
                     await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["client"].authenticate();
-                    const user = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["client"].currentUser.profile();
-                    console.log('🚀 ~ authenticate ~ user:', user);
                 }
             }["MyPlaylists.useEffect.authenticate"];
             authenticate();

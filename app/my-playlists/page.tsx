@@ -1,12 +1,12 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { client } from '../client';
-import { Playlist, TrackItem } from '@spotify/web-api-ts-sdk';
+import { Playlist } from '@spotify/web-api-ts-sdk';
 import PlaylistCard from '@/components/PlaylistCard';
 import PlaylistSkeleton from '@/components/PlaylistSkeleton';
 import Link from 'next/link';
 
-export type IPlaylist = Playlist<TrackItem>;
+export type IPlaylist = Playlist;
 
 export default function MyPlaylists() {
 	const [playlists, setPlaylists] = useState<IPlaylist[]>([]);

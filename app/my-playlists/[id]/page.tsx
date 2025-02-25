@@ -5,6 +5,8 @@ import { Playlist, Track } from '@spotify/web-api-ts-sdk';
 import Image from 'next/image';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useParams } from 'next/navigation';
+import { shuffleTracks } from '@/app/utils';
+import { Button } from '@/components/ui/button';
 
 export default function PlaylistDetail() {
 	const params = useParams<{ id: string }>();
@@ -24,6 +26,27 @@ export default function PlaylistDetail() {
 		};
 		getPlaylist();
 	}, [params.id]);
+
+	function shufflePlaylist() {
+		if (playlist) {
+			setPlaylist(shuffleTracks(playlist));
+		}
+	}
+	async function syncPlaylist() {
+		try {
+			await client.playlists.removeItemsFromPlaylist(params.id, {
+				tracks: playlist?.tracks.items.map(t => ({ uri: t.track.uri })) || [],
+			});
+			await client.playlists.addItemsToPlaylist(
+				params.id,
+				playlist?.tracks.items.map(t => t.track.uri) || []
+			);
+		} catch (error) {
+			if (error instanceof Error) {
+				throw new Error(error.message);
+			}
+		}
+	}
 
 	if (loading) {
 		return (
@@ -56,6 +79,8 @@ export default function PlaylistDetail() {
 					<h1 className="text-4xl font-bold text-white">{playlist.name}</h1>
 					<p className="text-neutral-400">{playlist.tracks.total} tracks</p>
 				</div>
+				<Button onClick={shufflePlaylist}>Shuffle</Button>
+				<Button onClick={syncPlaylist}>Sync</Button>
 			</div>
 
 			<div className="bg-white/10 backdrop-blur-xl rounded-xl p-4 sm:p-6">

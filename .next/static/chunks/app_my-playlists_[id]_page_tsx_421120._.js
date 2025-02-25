@@ -9,8 +9,8 @@
     "static/chunks/7d341_next_dist_compiled_403c22._.js",
     "static/chunks/7d341_next_dist_25e8c1._.js",
     "static/chunks/7d341_next_77917c._.js",
-    "static/chunks/node_modules__pnpm_6d79bb._.js",
-    "static/chunks/_458bf4._.js"
+    "static/chunks/node_modules__pnpm_bb237f._.js",
+    "static/chunks/_c9ba43._.js"
   ],
   "source": "dynamic"
 });
