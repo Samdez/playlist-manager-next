@@ -21,7 +21,6 @@ const scopes = [
 	'user-follow-read',
 	'user-follow-modify',
 ];
-console.log(process.env.SPOTIFY_CLIENT_ID);
 export const client = SpotifyApi.withUserAuthorization(
 	process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID!,
 	'http://localhost:3000/my-playlists',

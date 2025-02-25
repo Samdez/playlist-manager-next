@@ -16,6 +16,5 @@ export function shuffleTracks(playlist: IPlaylist) {
 			shuffledPlaylist.tracks.items[i],
 		];
 	}
-	console.log('🚀 ~ shuffleTracks ~ shuffledPlaylist:', shuffledPlaylist);
 	return shuffledPlaylist;
 }
