@@ -5,10 +5,11 @@ import { Playlist, Track } from '@spotify/web-api-ts-sdk';
 import Image from 'next/image';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useParams } from 'next/navigation';
-import { shuffleTracks } from '@/app/utils';
+import { shufflePlaylist, syncPlaylist } from '@/app/utils';
 import { Button } from '@/components/ui/button';
 import * as motion from 'motion/react-client';
 import { spring } from 'motion/react';
+import { addCron } from '@/app/actions/add-cron';
 
 export default function PlaylistDetail() {
 	const params = useParams<{ id: string }>();
@@ -29,24 +30,17 @@ export default function PlaylistDetail() {
 		getPlaylist();
 	}, [params.id]);
 
-	function shufflePlaylist() {
+	function handleShufflePlaylist() {
 		if (playlist) {
-			const timeout = setTimeout(
-				() => setPlaylist(shuffleTracks(playlist)),
-				100
-			);
+			const shuffledTracks = shufflePlaylist(playlist);
+			if (!shuffledTracks) return;
+			const timeout = setTimeout(() => setPlaylist(shuffledTracks), 100);
 			return () => clearTimeout(timeout);
 		}
 	}
-	async function syncPlaylist() {
+	async function handleSyncPlaylist(playlist: Playlist) {
 		try {
-			await client.playlists.removeItemsFromPlaylist(params.id, {
-				tracks: playlist?.tracks.items.map(t => ({ uri: t.track.uri })) || [],
-			});
-			await client.playlists.addItemsToPlaylist(
-				params.id,
-				playlist?.tracks.items.map(t => t.track.uri) || []
-			);
+			syncPlaylist(params.id, client, playlist);
 		} catch (error) {
 			if (error instanceof Error) {
 				throw new Error(error.message);
@@ -85,8 +79,9 @@ export default function PlaylistDetail() {
 					<h1 className="text-4xl font-bold text-white">{playlist.name}</h1>
 					<p className="text-neutral-400">{playlist.tracks.total} tracks</p>
 				</div>
-				<Button onClick={shufflePlaylist}>Shuffle</Button>
-				<Button onClick={syncPlaylist}>Sync</Button>
+				<Button onClick={handleShufflePlaylist}>Shuffle</Button>
+				<Button onClick={() => handleSyncPlaylist(playlist)}>Sync</Button>
+				<Button onClick={() => addCron(params.id)}>Add CRON</Button>
 			</div>
 
 			<div className="bg-white/10 backdrop-blur-xl rounded-xl p-4 sm:p-6">
