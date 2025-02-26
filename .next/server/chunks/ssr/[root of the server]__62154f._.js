@@ -229,12 +229,12 @@ Button.displayName = "Button";
 
 var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, x: __turbopack_external_require__, y: __turbopack_external_import__, z: __turbopack_require_stub__ } = __turbopack_context__;
 {
-/* __next_internal_action_entry_do_not_use__ {"40ac3a2b9d10b0701056417b6023887aebbbb4a5f8":"addCron"} */ __turbopack_esm__({
+/* __next_internal_action_entry_do_not_use__ {"60ac3a2b9d10b0701056417b6023887aebbbb4a5f8":"addCron"} */ __turbopack_esm__({
     "addCron": (()=>addCron)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$client$2d$wrapper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/action-client-wrapper.js [app-ssr] (ecmascript)");
 ;
-var addCron = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$client$2d$wrapper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createServerReference"])("40ac3a2b9d10b0701056417b6023887aebbbb4a5f8", __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$client$2d$wrapper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["callServer"], void 0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$client$2d$wrapper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["findSourceMapURL"], "addCron");
+var addCron = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$client$2d$wrapper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createServerReference"])("60ac3a2b9d10b0701056417b6023887aebbbb4a5f8", __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$client$2d$wrapper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["callServer"], void 0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$client$2d$wrapper$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["findSourceMapURL"], "addCron");
 }}),
 "[project]/app/my-playlists/[id]/page.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
@@ -422,11 +422,19 @@ function PlaylistDetail() {
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                        onClick: ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2f$add$2d$cron$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addCron"])(params.id),
-                        children: "Add CRON"
+                        onClick: ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2f$add$2d$cron$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addCron"])(params.id, 'minute'),
+                        children: "Add CRON 1MIN"
                     }, void 0, false, {
                         fileName: "[project]/app/my-playlists/[id]/page.tsx",
                         lineNumber: 84,
+                        columnNumber: 5
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                        onClick: ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2f$add$2d$cron$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addCron"])(params.id, 'hour'),
+                        children: "Add CRON 1HOUR"
+                    }, void 0, false, {
+                        fileName: "[project]/app/my-playlists/[id]/page.tsx",
+                        lineNumber: 87,
                         columnNumber: 5
                     }, this)
                 ]
@@ -446,21 +454,21 @@ function PlaylistDetail() {
                                 children: "#"
                             }, void 0, false, {
                                 fileName: "[project]/app/my-playlists/[id]/page.tsx",
-                                lineNumber: 89,
+                                lineNumber: 94,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "w-8 sm:w-10"
                             }, void 0, false, {
                                 fileName: "[project]/app/my-playlists/[id]/page.tsx",
-                                lineNumber: 90,
+                                lineNumber: 95,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 children: "TITLE"
                             }, void 0, false, {
                                 fileName: "[project]/app/my-playlists/[id]/page.tsx",
-                                lineNumber: 91,
+                                lineNumber: 96,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -468,13 +476,13 @@ function PlaylistDetail() {
                                 children: "DURATION"
                             }, void 0, false, {
                                 fileName: "[project]/app/my-playlists/[id]/page.tsx",
-                                lineNumber: 92,
+                                lineNumber: 97,
                                 columnNumber: 6
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/my-playlists/[id]/page.tsx",
-                        lineNumber: 88,
+                        lineNumber: 93,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -491,7 +499,7 @@ function PlaylistDetail() {
                                         children: index + 1
                                     }, void 0, false, {
                                         fileName: "[project]/app/my-playlists/[id]/page.tsx",
-                                        lineNumber: 105,
+                                        lineNumber: 110,
                                         columnNumber: 9
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -502,7 +510,7 @@ function PlaylistDetail() {
                                         className: "rounded w-8 h-8 sm:w-10 sm:h-10"
                                     }, void 0, false, {
                                         fileName: "[project]/app/my-playlists/[id]/page.tsx",
-                                        lineNumber: 106,
+                                        lineNumber: 111,
                                         columnNumber: 9
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -513,7 +521,7 @@ function PlaylistDetail() {
                                                 children: track.name
                                             }, void 0, false, {
                                                 fileName: "[project]/app/my-playlists/[id]/page.tsx",
-                                                lineNumber: 114,
+                                                lineNumber: 119,
                                                 columnNumber: 10
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -521,13 +529,13 @@ function PlaylistDetail() {
                                                 children: track.artists.map((a)=>a.name).join(', ')
                                             }, void 0, false, {
                                                 fileName: "[project]/app/my-playlists/[id]/page.tsx",
-                                                lineNumber: 117,
+                                                lineNumber: 122,
                                                 columnNumber: 10
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/my-playlists/[id]/page.tsx",
-                                        lineNumber: 113,
+                                        lineNumber: 118,
                                         columnNumber: 9
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -535,25 +543,25 @@ function PlaylistDetail() {
                                         children: formatDuration(track.duration_ms)
                                     }, void 0, false, {
                                         fileName: "[project]/app/my-playlists/[id]/page.tsx",
-                                        lineNumber: 121,
+                                        lineNumber: 126,
                                         columnNumber: 9
                                     }, this)
                                 ]
                             }, track.id, true, {
                                 fileName: "[project]/app/my-playlists/[id]/page.tsx",
-                                lineNumber: 99,
+                                lineNumber: 104,
                                 columnNumber: 8
                             }, this);
                         })
                     }, void 0, false, {
                         fileName: "[project]/app/my-playlists/[id]/page.tsx",
-                        lineNumber: 95,
+                        lineNumber: 100,
                         columnNumber: 5
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/my-playlists/[id]/page.tsx",
-                lineNumber: 87,
+                lineNumber: 92,
                 columnNumber: 4
             }, this)
         ]

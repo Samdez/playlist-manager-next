@@ -81,7 +81,12 @@ export default function PlaylistDetail() {
 				</div>
 				<Button onClick={handleShufflePlaylist}>Shuffle</Button>
 				<Button onClick={() => handleSyncPlaylist(playlist)}>Sync</Button>
-				<Button onClick={() => addCron(params.id)}>Add CRON</Button>
+				<Button onClick={() => addCron(params.id, 'minute')}>
+					Add CRON 1MIN
+				</Button>
+				<Button onClick={() => addCron(params.id, 'hour')}>
+					Add CRON 1HOUR
+				</Button>
 			</div>
 
 			<div className="bg-white/10 backdrop-blur-xl rounded-xl p-4 sm:p-6">

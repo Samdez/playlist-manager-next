@@ -52,45 +52,6 @@ const mod = __turbopack_external_require__("node:crypto", () => require("node:cr
 
 module.exports = mod;
 }}),
-"[project]/trigger/example.ts [app-rsc] (ecmascript)": ((__turbopack_context__) => {
-"use strict";
-
-var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, x: __turbopack_external_require__, y: __turbopack_external_import__, z: __turbopack_require_stub__ } = __turbopack_context__;
-{
-__turbopack_esm__({
-    "firstScheduledTask": (()=>firstScheduledTask)
-});
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$trigger$2e$dev$2f$sdk$2f$dist$2f$esm$2f$v3$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$module__evaluation$3e$__ = __turbopack_import__("[project]/node_modules/@trigger.dev/sdk/dist/esm/v3/index.js [app-rsc] (ecmascript) <module evaluation>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$trigger$2e$dev$2f$sdk$2f$dist$2f$esm$2f$v3$2f$schedules$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__schedules$3e$__ = __turbopack_import__("[project]/node_modules/@trigger.dev/sdk/dist/esm/v3/schedules/index.js [app-rsc] (ecmascript) <export * as schedules>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$trigger$2e$dev$2f$core$2f$dist$2f$esm$2f$v3$2f$logger$2d$api$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/@trigger.dev/core/dist/esm/v3/logger-api.js [app-rsc] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$trigger$2e$dev$2f$sdk$2f$dist$2f$esm$2f$v3$2f$wait$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/@trigger.dev/sdk/dist/esm/v3/wait.js [app-rsc] (ecmascript)");
-;
-const firstScheduledTask = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$trigger$2e$dev$2f$sdk$2f$dist$2f$esm$2f$v3$2f$schedules$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__schedules$3e$__["schedules"].task({
-    id: 'first-scheduled-task',
-    // Every hour
-    cron: '0 * * * *',
-    // Set an optional maxDuration to prevent tasks from running indefinitely
-    maxDuration: 300,
-    run: async (payload, {})=>{
-        // The payload contains the last run timestamp that you can use to check if this is the first run
-        // And calculate the time since the last run
-        const distanceInMs = payload.timestamp.getTime() - (payload.lastTimestamp ?? new Date()).getTime();
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$trigger$2e$dev$2f$core$2f$dist$2f$esm$2f$v3$2f$logger$2d$api$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["logger"].log('First scheduled tasks', {
-            payload,
-            distanceInMs
-        });
-        // Wait for 5 seconds
-        await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$trigger$2e$dev$2f$sdk$2f$dist$2f$esm$2f$v3$2f$wait$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["wait"].for({
-            seconds: 5
-        });
-        // Format the timestamp using the timezone from the payload
-        const formatted = payload.timestamp.toLocaleString('en-US', {
-            timeZone: payload.timezone
-        });
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$trigger$2e$dev$2f$core$2f$dist$2f$esm$2f$v3$2f$logger$2d$api$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["logger"].log(formatted);
-    }
-});
-}}),
 "[project]/app/actions/add-cron.ts [app-rsc] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
@@ -101,7 +62,11 @@ var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/server-reference.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$app$2d$render$2f$encryption$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/server/app-render/encryption.js [app-rsc] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$trigger$2f$example$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/trigger/example.ts [app-rsc] (ecmascript)");
+(()=>{
+    const e = new Error("Cannot find module '@/trigger/example'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$trigger$2e$dev$2f$sdk$2f$dist$2f$esm$2f$v3$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$module__evaluation$3e$__ = __turbopack_import__("[project]/node_modules/@trigger.dev/sdk/dist/esm/v3/index.js [app-rsc] (ecmascript) <module evaluation>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$action$2d$validate$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/build/webpack/loaders/next-flight-loader/action-validate.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$trigger$2e$dev$2f$sdk$2f$dist$2f$esm$2f$v3$2f$schedules$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__schedules$3e$__ = __turbopack_import__("[project]/node_modules/@trigger.dev/sdk/dist/esm/v3/schedules/index.js [app-rsc] (ecmascript) <export * as schedules>");
@@ -111,7 +76,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$trigger$2e
 ;
 async function /*#__TURBOPACK_DISABLE_EXPORT_MERGING__*/ addCron(playlistId) {
     await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$trigger$2e$dev$2f$sdk$2f$dist$2f$esm$2f$v3$2f$schedules$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__schedules$3e$__["schedules"].create({
-        task: __TURBOPACK__imported__module__$5b$project$5d2f$trigger$2f$example$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["firstScheduledTask"].id,
+        task: firstScheduledTask.id,
         cron: '* * * * *',
         deduplicationKey: `playlist-${playlistId}`,
         externalId: playlistId
@@ -165,4 +130,4 @@ var __TURBOPACK__imported__module__$5b$project$5d2f2e$next$2d$internal$2f$server
 
 };
 
-//# sourceMappingURL=%5Broot%20of%20the%20server%5D__b59d52._.js.map
+//# sourceMappingURL=%5Broot%20of%20the%20server%5D__9d2069._.js.map
