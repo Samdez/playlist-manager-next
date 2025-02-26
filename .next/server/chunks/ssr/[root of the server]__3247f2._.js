@@ -48,8 +48,7 @@ const scopes = [
     'user-follow-read',
     'user-follow-modify'
 ];
-console.log(process.env.SPOTIFY_CLIENT_ID);
-const client = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$spotify$2b$web$2d$api$2d$ts$2d$sdk$40$1$2e$2$2e$0$2f$node_modules$2f40$spotify$2f$web$2d$api$2d$ts$2d$sdk$2f$dist$2f$mjs$2f$SpotifyApi$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SpotifyApi"].withUserAuthorization(("TURBOPACK compile-time value", "0916ebedc8fe494699b4252738eb2444"), 'http://localhost:3000/my-playlists', scopes);
+const client = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$spotify$2b$web$2d$api$2d$ts$2d$sdk$40$1$2e$2$2e$0$2f$node_modules$2f40$spotify$2f$web$2d$api$2d$ts$2d$sdk$2f$dist$2f$mjs$2f$SpotifyApi$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SpotifyApi"].withUserAuthorization(("TURBOPACK compile-time value", "0916ebedc8fe494699b4252738eb2444"), ("TURBOPACK compile-time value", "localhost:3000/my-playlists"), scopes);
 }}),
 "[project]/lib/utils.ts [app-ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
@@ -140,7 +139,6 @@ function shuffleTracks(playlist) {
             shuffledPlaylist.tracks.items[i]
         ];
     }
-    console.log('🚀 ~ shuffleTracks ~ shuffledPlaylist:', shuffledPlaylist);
     return shuffledPlaylist;
 }
 }}),

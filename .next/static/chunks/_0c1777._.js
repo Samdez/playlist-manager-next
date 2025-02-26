@@ -33,7 +33,7 @@ const scopes = [
     'user-follow-read',
     'user-follow-modify'
 ];
-const client = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$spotify$2b$web$2d$api$2d$ts$2d$sdk$40$1$2e$2$2e$0$2f$node_modules$2f40$spotify$2f$web$2d$api$2d$ts$2d$sdk$2f$dist$2f$mjs$2f$SpotifyApi$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SpotifyApi"].withUserAuthorization(("TURBOPACK compile-time value", "0916ebedc8fe494699b4252738eb2444"), __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$1$2e$7_react$2d$dom$40$19$2e$0$2e$0_react$40$19$2e$0$2e$0_$5f$react$40$19$2e$0$2e$0$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.REDIRECT_URI, scopes);
+const client = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$spotify$2b$web$2d$api$2d$ts$2d$sdk$40$1$2e$2$2e$0$2f$node_modules$2f40$spotify$2f$web$2d$api$2d$ts$2d$sdk$2f$dist$2f$mjs$2f$SpotifyApi$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SpotifyApi"].withUserAuthorization(("TURBOPACK compile-time value", "0916ebedc8fe494699b4252738eb2444"), ("TURBOPACK compile-time value", "localhost:3000/my-playlists"), scopes);
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_refresh__.registerExports(module, globalThis.$RefreshHelpers$);
 }

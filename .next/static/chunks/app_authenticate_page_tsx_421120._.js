@@ -8,7 +8,7 @@
     "static/chunks/7d341_next_dist_compiled_crypto-browserify_index_465fe1.js",
     "static/chunks/7d341_next_dist_compiled_a54dd9._.js",
     "static/chunks/7d341_next_navigation_683aa1.js",
-    "static/chunks/node_modules__pnpm_f32632._.js",
+    "static/chunks/node_modules__pnpm_989715._.js",
     "static/chunks/app_c65580._.js"
   ],
   "source": "dynamic"

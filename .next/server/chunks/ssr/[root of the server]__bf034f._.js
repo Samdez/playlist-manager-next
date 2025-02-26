@@ -48,8 +48,7 @@ const scopes = [
     'user-follow-read',
     'user-follow-modify'
 ];
-console.log(process.env.SPOTIFY_CLIENT_ID);
-const client = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$spotify$2b$web$2d$api$2d$ts$2d$sdk$40$1$2e$2$2e$0$2f$node_modules$2f40$spotify$2f$web$2d$api$2d$ts$2d$sdk$2f$dist$2f$mjs$2f$SpotifyApi$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SpotifyApi"].withUserAuthorization(("TURBOPACK compile-time value", "0916ebedc8fe494699b4252738eb2444"), 'http://localhost:3000/my-playlists', scopes);
+const client = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$spotify$2b$web$2d$api$2d$ts$2d$sdk$40$1$2e$2$2e$0$2f$node_modules$2f40$spotify$2f$web$2d$api$2d$ts$2d$sdk$2f$dist$2f$mjs$2f$SpotifyApi$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SpotifyApi"].withUserAuthorization(("TURBOPACK compile-time value", "0916ebedc8fe494699b4252738eb2444"), ("TURBOPACK compile-time value", "localhost:3000/my-playlists"), scopes);
 }}),
 "[externals]/next/dist/server/app-render/action-async-storage.external.js [external] (next/dist/server/app-render/action-async-storage.external.js, cjs)": (function(__turbopack_context__) {
 
@@ -86,14 +85,24 @@ __turbopack_esm__({
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$1$2e$7_react$2d$dom$40$19$2e$0$2e$0_react$40$19$2e$0$2e$0_$5f$react$40$19$2e$0$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/app/client.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$1$2e$7_react$2d$dom$40$19$2e$0$2e$0_react$40$19$2e$0$2e$0_$5f$react$40$19$2e$0$2e$0$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/navigation.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$pocketbase$40$0$2e$25$2e$1$2f$node_modules$2f$pocketbase$2f$dist$2f$pocketbase$2e$es$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/.pnpm/pocketbase@0.25.1/node_modules/pocketbase/dist/pocketbase.es.mjs [app-ssr] (ecmascript)");
 'use client';
 ;
 ;
 ;
+;
+const pb = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$pocketbase$40$0$2e$25$2e$1$2f$node_modules$2f$pocketbase$2f$dist$2f$pocketbase$2e$es$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]('http://pocketbase-lgc4cw80848w4w40swc4w8gw.samdez.net');
 function MyPlaylists() {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$1$2e$7_react$2d$dom$40$19$2e$0$2e$0_react$40$19$2e$0$2e$0_$5f$react$40$19$2e$0$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const authenticate = async ()=>{
             await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["client"].authenticate();
+            const currentUser = await __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["client"].currentUser.profile();
+            const pbUser = await pb.collection('spotify_users').getFirstListItem(`spotifyUserId = "${currentUser.id}"`);
+            if (!pbUser) {
+                await pb.collection('spotify_users').create({
+                    spotifyUserId: currentUser.id
+                });
+            }
         };
         authenticate();
         (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$1$2e$7_react$2d$dom$40$19$2e$0$2e$0_react$40$19$2e$0$2e$0_$5f$react$40$19$2e$0$2e$0$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["redirect"])('/my-playlists');
