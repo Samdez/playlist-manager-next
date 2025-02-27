@@ -16,9 +16,12 @@ async function shufflePlaylistTask(playlistId: string) {
 const createSyncTask = (id: string) => {
 	return schedules.task({
 		id,
+		retry: {
+			maxAttempts: 3,
+		},
 		run: async payload => {
 			if (!payload.externalId) {
-				throw new Error('Playlist ID is required');
+				throw new Error('Playlist ID is required: createSyncTask');
 			}
 			await shufflePlaylistTask(payload.externalId);
 		},

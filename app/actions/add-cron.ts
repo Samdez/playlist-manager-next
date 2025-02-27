@@ -24,6 +24,7 @@ export async function addCron(
 	playlistId: string,
 	frequency: 'minute' | 'hour' | 'day' | 'week'
 ) {
+	if (!playlistId) throw new Error('Playlist ID is required: addCron');
 	await schedules.create({
 		task: getCronTask(frequency).task.id,
 		cron: getCronTask(frequency).frequency,
