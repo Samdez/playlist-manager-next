@@ -28,5 +28,6 @@ export async function addCron(
 		task: getCronTask(frequency).task.id,
 		cron: getCronTask(frequency).frequency,
 		deduplicationKey: `playlistId:${playlistId}`,
+		externalId: playlistId,
 	});
 }

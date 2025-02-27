@@ -13,10 +13,9 @@ async function shufflePlaylistTask(playlistId: string) {
 	}
 }
 
-const createSyncTask = (id: string, cronPattern: string) => {
+const createSyncTask = (id: string) => {
 	return schedules.task({
 		id,
-		cron: cronPattern,
 		run: async payload => {
 			if (!payload.externalId) {
 				throw new Error('Playlist ID is required');
@@ -27,21 +26,17 @@ const createSyncTask = (id: string, cronPattern: string) => {
 };
 
 export const syncPlaylistEveryMinuteTask = createSyncTask(
-	'sync-playlist-every-minute-task',
-	'* * * * *'
+	'sync-playlist-every-minute-task'
 );
 
 export const syncPlaylistEveryHourTask = createSyncTask(
-	'sync-playlist-every-hour-task',
-	'0 * * * *'
+	'sync-playlist-every-hour-task'
 );
 
 export const syncPlaylistEveryDayTask = createSyncTask(
-	'sync-playlist-every-day-task',
-	'0 0 * * *'
+	'sync-playlist-every-day-task'
 );
 
 export const syncPlaylistEveryWeekTask = createSyncTask(
-	'sync-playlist-every-week-task',
-	'0 0 * * 1'
+	'sync-playlist-every-week-task'
 );
