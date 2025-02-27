@@ -1,12 +1,16 @@
-import { client } from '@/app/client';
 import { shufflePlaylist, syncPlaylist } from '@/app/utils';
+import { SpotifyApi } from '@spotify/web-api-ts-sdk';
 import { schedules } from '@trigger.dev/sdk/v3';
 
 async function shufflePlaylistTask(playlistId: string) {
 	try {
-		const playlist = await client.playlists.getPlaylist(playlistId);
+		const serverSideClient = SpotifyApi.withClientCredentials(
+			process.env.SPOTIFY_CLIENT_ID!,
+			process.env.SPOTIFY_CLIENT_SECRET!
+		);
+		const playlist = await serverSideClient.playlists.getPlaylist(playlistId);
 		shufflePlaylist(playlist);
-		await syncPlaylist(playlistId, client, playlist);
+		await syncPlaylist(playlistId, serverSideClient, playlist);
 	} catch (error) {
 		console.error(`Failed to sync playlist ${playlistId}:`, error);
 		throw error; // Re-throw to let Trigger.dev handle the error
