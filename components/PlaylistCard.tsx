@@ -15,6 +15,7 @@ export default function PlaylistCard({ playlist }: { playlist: IPlaylist }) {
 					className="object-cover w-full h-full"
 					width={100}
 					height={100}
+					unoptimized
 				/>
 			</div>
 			<CardHeader>
