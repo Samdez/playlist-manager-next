@@ -1,1 +1,7 @@
-{}
+{
+  "/page": "app/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/authenticate/page": "app/authenticate/page.js",
+  "/my-playlists/page": "app/my-playlists/page.js",
+  "/my-playlists/[id]/page": "app/my-playlists/[id]/page.js"
+}

@@ -1,21 +1,46 @@
-import { shufflePlaylist, syncPlaylist } from '@/app/utils';
-import { SpotifyApi } from '@spotify/web-api-ts-sdk';
 import { schedules } from '@trigger.dev/sdk/v3';
+import { shufflePlaylist } from '@/app/utils';
+import { SpotifyPlaylistAPI } from '@/app/custom-client';
 
 async function shufflePlaylistTask(playlistId: string) {
 	try {
-		const serverSideClient = SpotifyApi.withClientCredentials(
+		const customClient = new SpotifyPlaylistAPI(
 			process.env.SPOTIFY_CLIENT_ID!,
 			process.env.SPOTIFY_CLIENT_SECRET!
 		);
-		const playlist = await serverSideClient.playlists.getPlaylist(playlistId);
+		const playlist = await customClient.getPlaylist(playlistId);
 		shufflePlaylist(playlist);
-		await syncPlaylist(playlistId, serverSideClient, playlist);
+		await customClient.removeItemsFromPlaylist(
+			playlistId,
+			playlist.tracks.items.map(t => ({ uri: t.track.uri })) || []
+		);
+		await customClient.addItemsToPlaylist(
+			playlistId,
+			playlist?.tracks.items.map(t => t.track.uri) || []
+		);
+		// await syncPlaylist(playlistId, spotifyClient, playlist);
 	} catch (error) {
 		console.error(`Failed to sync playlist ${playlistId}:`, error);
-		throw error; // Re-throw to let Trigger.dev handle the error
+		throw error;
 	}
 }
+
+// ... existing code ...
+
+// async function shufflePlaylistTask(playlistId: string) {
+// 	try {
+// 		const serverSideClient = SpotifyApi.withClientCredentials(
+// 			process.env.SPOTIFY_CLIENT_ID!,
+// 			process.env.SPOTIFY_CLIENT_SECRET!
+// 		);
+// 		const playlist = await serverSideClient.playlists.getPlaylist(playlistId);
+// 		shufflePlaylist(playlist);
+// 		await syncPlaylist(playlistId, serverSideClient, playlist);
+// 	} catch (error) {
+// 		console.error(`Failed to sync playlist ${playlistId}:`, error);
+// 		throw error; // Re-throw to let Trigger.dev handle the error
+// 	}
+// }
 
 const createSyncTask = (id: string) => {
 	return schedules.task({

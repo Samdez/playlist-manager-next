@@ -1,4 +1,4 @@
-import { Playlist, SpotifyApi } from '@spotify/web-api-ts-sdk';
+import { SpotifyApi } from '@spotify/web-api-ts-sdk';
 import { IPlaylist } from './my-playlists/page';
 
 export function shuffleTracks(playlist: IPlaylist) {
@@ -29,9 +29,10 @@ export function shufflePlaylist(playlist: IPlaylist) {
 export async function syncPlaylist(
 	playlistId: string,
 	client: SpotifyApi,
-	playlist: Playlist
+	playlist: IPlaylist
 ) {
 	try {
+		// if ('playlists' in client) {
 		await client.playlists.removeItemsFromPlaylist(playlistId, {
 			tracks: playlist?.tracks.items.map(t => ({ uri: t.track.uri })) || [],
 		});
@@ -39,6 +40,10 @@ export async function syncPlaylist(
 			playlistId,
 			playlist?.tracks.items.map(t => t.track.uri) || []
 		);
+		// } else {
+		// 	const trackUris = playlist?.tracks.items.map(t => t.track.uri) || [];
+		// 	await client.syncPlaylist(playlistId, trackUris);
+		// }
 	} catch (error) {
 		if (error instanceof Error) {
 			throw new Error(error.message);
