@@ -74,6 +74,7 @@ export default function PlaylistDetail() {
 					width={192}
 					height={192}
 					className="rounded-lg shadow-lg"
+					unoptimized
 				/>
 				<div>
 					<h1 className="text-4xl font-bold text-white">{playlist.name}</h1>
@@ -114,6 +115,7 @@ export default function PlaylistDetail() {
 									width={32}
 									height={32}
 									className="rounded w-8 h-8 sm:w-10 sm:h-10"
+									unoptimized
 								/>
 								<div className="min-w-0">
 									<div className="text-white truncate group-hover:text-emerald-400 text-sm sm:text-base">
